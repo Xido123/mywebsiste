@@ -1,0 +1,195 @@
+ /* font */
+ @font-face {
+	font-family:consolas;
+	src:url(../fonts/consola.ttf);
+}
+@font-face {
+	font-family:comic sans ms;
+	src:url(../fonts/comic\ sans\ ms.ttf);
+}
+html {
+	overflow:auto;
+}
+p {
+	padding-bottom:10px;
+}
+.h5 {
+	padding-left:20px;
+	padding-bottom:10px;
+	padding-top:10px;
+	font-weight:1.5;
+}
+.p-front {
+	background-color:rgba(24,15,15,0.267);
+}
+.p-code {
+	padding-left:20px;
+	background:#000000;
+	color:#fff;
+	font-family:consolas;
+}
+#p-data {
+	text-align:right;
+	margin-right:50px;
+	color:rgba(0,0,0,0.781);
+}
+.new-tag {
+	color:rgb(71,178,192);
+	font-weight:bold;
+	font-size:20px;
+}
+.new-tag:hover {
+	color:#fff;
+}
+.table-mid {
+	position: relative;
+	left: 15%;
+	
+	font-size:15px;
+}
+.weblog-time {
+	font-size:1.5em;
+	text-align:left;
+	border-bottom:2px solid rgb(41,39,39);
+}
+#h {
+	border-radius:1px;
+	box-shadow:0 0 5px rgba(0,0,0,.9);
+	border-bottom:1px solid rgb(163,161,161);
+	width:auto;
+}
+div,h1,h2,h3,h4,h5,p,pre,button,table,td,tr {
+	margin:0;
+	font-family:comic sans ms;
+	font-size:20px;
+	font-weight:1.9;
+}
+h1 {
+	padding:10px;
+	position:relative;
+	border-radius:2px;
+	left:15%;
+	font-size:35px;
+	text-transform:capitalize;
+	width:500px;
+}
+h2 {
+	position: relative;
+	left: 10%;
+	margin-left:20px;
+	width:70%;
+	min-width:500px;
+	max-width:870px;
+	margin-top:10px;
+	text-transform:uppercase;
+	box-shadow:0 0 3px rgba(0,0,0,0.397);
+	border-radius:5px;
+	padding-left:10px;
+}
+.a-otherpage {
+	border-radius:7px 7px 7px;
+	text-transform:capitalize;
+	font-size:1em;
+	background:#07000011;
+}
+.c-date {
+	color:#fff;
+}
+a {
+	color:rgb(0,0,0);
+	width:auto;
+	font-size:1.5em;
+	text-decoration:none;
+}
+a:hover {
+	color:#fff;
+	height:52px;
+	text-decoration:#111111;
+	font:bold;
+}
+.td-home {
+	width:250px;
+}
+a:active {
+	color:black;
+}
+ul.menu {
+	display:inline;
+	position:relative;
+	left:30%;
+	list-style:none;
+	border-radius:5px;
+}
+li {
+	display:inline;
+	padding-right:20px;
+}
+pre {
+	padding:20px;
+	font-family:Consolas;
+	color:#fff;
+	margin-left:15%;
+	background:#000000;
+	width:700px;
+	border-radius:5px;
+}
+body {
+	margin:0;
+	width:auto;
+	max-width: 1920px;
+	height: 1080px;
+	background-image:url("../images/shuimo.jpg");
+	background-attachment: fixed;
+	background-repeat:no-repeat;
+	font:15px/1.5 Lato,"PingFang SC","Microsoft YaHei",sans-serif;
+	overflow:auto;
+}
+.logo2 {
+	display:inline;
+	position:relative;
+	left: 2%;
+	top:10px;
+	padding:0;
+	font-family:comic sans ms,Consolas,cursive;
+	font-size:30px;
+	font-weight:bolder;
+	color:#111111;
+	line-height:1.5;
+}
+.td-head {
+	width:300px;
+}
+.td-small {
+	width:50PX;
+}
+.mid-text {
+	padding-bottom:50px;
+	margin-top:10px;
+	width:950px;
+	height:auto;
+
+	position:relative;
+	left:1.5%;
+	background:#00000021;
+	border-radius:5px;
+	box-shadow:1px 2px 1px 1px rgba(0,0,0,0.397);
+}
+.mid-text-h1 {
+	font-size:27px;
+	text-align:center;
+}
+.x-size {
+	font-size:50px;
+}
+h3 {
+	font:1.3em sans-serif;
+}
+footer {
+	width:100%;
+	
+
+	display:inline-block;
+padding-bottom: 2px;
+	height:52px;
+	background:#00000013;
+}

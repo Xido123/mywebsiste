@@ -1,0 +1,107 @@
+<!-- 
+  auther 1661480468@qq.com
+  网站公共样式
+
+ -->
+ <!DOCTYPE html>
+ <html>
+  <head>
+      <title>西多的基地</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/index-test.css">
+<style>
+    h1 {
+        font-size: 27px;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        border-radius: 2px;
+        left: 15%;
+        font-size: 35px;
+        text-transform: capitalize;
+        width: 500px;
+    }
+
+    h4 {
+        text-align: right;
+        margin-right: 50px;
+        color: rgba(0, 0, 0, 0.781);
+    }
+
+    h5 {
+        padding-left: 20px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-weight: 1.5;
+    }
+
+   
+
+    pre {
+        width: auto;
+        margin-left: 0;
+        background: #000000;
+        color: #fff;
+        font-family: consolas;
+        border-radius: 0;
+    }
+
+    xmp {
+        font-family: consolas;
+    }
+</style>
+</head>
+<body>
+<!----------------- web-head 头部 ----------------------->
+    <div id="h">
+        <div class="logo2">
+            <span class="x-size">X</span>ido.home
+        </div>
+        <ul class="menu">
+            <li><a href="home.html">home</a></li>
+            <li><a href="note.html">note</a></li>
+            <li><a href="demo.html">demo</a></li>
+            <li><a href="weblog.html">weblog</a></li>
+        </ul>
+    </div>
+    
+<!------------------- code ---------------------------------------->
+    <div class="mid-text">
+        <h1>vue初步学习-模板语法</h1>
+        <h4>2019.11.24</h4>
+        <h5>1.Helloworld实现</h5>
+        <p>段落</p>
+<!------------------------- app one---------------------- -->
+        <pre><xmp>//链接文件，之后每个文件均包含此行
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+
+<div id="app">
+    <p>{{ message }}</p>
+</div>
+<script>
+new Vue({
+    el: '#app',
+    data: {
+        message: 'HelloWorld'
+    }
+});
+</script>
+   </xmp>
+ </pre>
+
+
+ <!------------------- mid-text-end-div------------------>
+</div>
+<!------------------- mid-text-end-div------------------>
+
+    <div style="height: 167px;width: 250px;"></div>
+
+<!--------------- web-button 底部 ------------------------>
+    <footer>
+        <h3 style="text-align: center;"> Copyright © 1661480468@qq.com
+            <br />滇ICP备19003958号-1
+
+        </h3>
+    </footer>
+</body>
+</html>

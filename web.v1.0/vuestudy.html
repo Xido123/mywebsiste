@@ -1,0 +1,249 @@
+<!-- 
+  auther 1661480468@qq.com
+  网站公共样式
+
+ -->
+ <!DOCTYPE html>
+ <html>
+  <head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/index-test.css">
+<style>
+    h1 {
+        font-size: 27px;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        border-radius: 2px;
+        left: 15%;
+        font-size: 35px;
+        text-transform: capitalize;
+        width: 500px;
+    }
+
+    h4 {
+        text-align: right;
+        margin-right: 50px;
+        color: rgba(0, 0, 0, 0.781);
+    }
+
+    h5 {
+        padding-left: 20px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-weight: 1.5;
+    }
+
+    p {
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
+    pre {
+        width: auto;
+        margin-left: 0;
+        background: #000000;
+        color: #fff;
+        font-family: consolas;
+        border-radius: 0;
+    }
+
+    xmp {
+        font-family: consolas;
+    }
+   
+</style>
+</head>
+<body>
+    <!-- head 头部 -->
+    <div id="h">
+        <div class="logo2">
+            <span class="x-size">X</span>ido.home
+        </div>
+        <ul class="menu">
+            <li><a href="home.html">home</a></li>
+            <li><a href="note.html">note</a></li>
+            <li><a href="demo.html">demo</a></li>
+            <li><a href="weblog.html">weblog</a></li>
+        </ul>
+    </div>
+    
+    <!-- code -->
+    <div class="mid-text">
+        <h1>vue初步学习-模板语法</h1>
+        <h4>2019.11.24</h4>
+        <p>1.Helloworld实现</p>
+        <!------------------------- app one---------------------- -->
+        <pre><xmp>//链接文件，之后每个文件均包含此行
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+
+<div id="app">
+    <p>{{ message }}</p>
+</div>
+<script>
+new Vue({
+    el: '#app',
+    data: {
+        message: 'HelloWorld'
+    }
+});
+</script>
+   </xmp>
+ </pre>
+ <!------------------------- app2---------------------- -->
+ <p>2.v-html指令</p>
+ <p>指令是带有v-前缀的特殊属性，指令的值用于在表达式的值改变时，将某些行为应用到dom上</p>
+ <pre><xmp><div id="app2">
+    <p v-html="message"></p>
+</div>
+<script>
+new Vue({
+    el: '#app2',
+    data: {
+        message: '<h1>菜鸟教程</h1>'
+    }
+});
+</script>
+</xmp>
+</pre>
+ <!----------------------- app3 ------------------------------>
+<p>3.vue对js表达式的支持</p>
+<p>*--*<br>
+    message.split(' ') == [ "N", "o", "t", " ", "s", "p", "l", "i", "t" ]
+split(' ')会把数据拆分为一个数组,括号里的' '是把数据拆分为每个字符串的意思，如果不用就不会拆分成每个字符串
+reverse( )是翻转的意思，把数据反过来
+message.reverse() == Not split //无效，因为只能对数组起作用
+所以要跟在split(' ')后使用
+join(' ')是重组的意思，把数组合成一个字符串
+message.split('').join(' ')
+slpit后会拆散会数组，join后就会变回原来的字符串了 <br>
+*--*
+</p>
+<pre><xmp><div id="app3">
+    {{5+5}} <br>
+    {{ ok ? 'yse' : 'no'}} <br>
+    {{ message.split('').reverse().join('')}}   
+    <div v-bind:id="'list-'+id">菜鸟教程</div>
+</div>
+new Vue({
+    el: '#app3',
+    data: {
+        ok: true,
+        message: 'abc',
+        id: 1
+    }
+});
+</xmp>
+</pre>
+ <!----------------------- app4 ------------------------------>
+ <p>4.vue v-if，v-bind命令</p>
+ <p>这里， v-if 指令将根据表达式 seen 的值(true 或 false )来决定是否插入 p 元素
+     <br>参数在指令后以冒号指明。例如， v-bind 指令被用来响应地更新 HTML 属性
+     <br>在这里 href 是参数，告知 v-bind 指令将该元素的 href 属性与表达式 url 的值绑定
+ </p>
+ <pre><xmp><div id="app4">
+    <p v-if="seen">现在你看到我了</p>
+    <div v-if="ok">
+        <h1>菜鸟教程</h1>
+        <p>学的不仅是技术，更是梦想</p>
+        <p>hahaha </p>
+    </div>
+    <pre><a v-bind:href="url">菜鸟教程</a></pre>
+</div>
+ // v-if
+ new Vue({
+     el: '#app4',
+     data: {
+         seen: true,
+         ok: true,
+         url: 'https://www.baidu.com'
+
+     }
+ });
+ </xmp>
+ </pre>
+  <!----------------------- app5 ------------------------------>
+<p>5.v-model数据绑定</p>
+<p>-model 指令用来在 input、select、textarea、checkbox、radio 等表单控件元素上创建双向数据绑定，根据表单上的值，自动更新绑定的元素的值。</p>
+<pre><xmp>  <div id="app5">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
+// 用户输入
+new Vue({
+    el: '#app5',
+    data: {
+        message: 'aaaaa'
+    }
+});
+
+</xmp>
+</pre>
+ <!----------------------- app6 ------------------------------>
+ 
+ <p>6.v-on 指令，它用于监听 DOM 事件</p>
+ <p> v-on:click="doSomething"</p>
+ <pre><xmp><div id="app6">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">反转字符串</button>
+</div>
+ new Vue({
+    el: '#app6',
+    data: {
+        message: 'abcdef'
+    },
+    methods: {
+        reverseMessage: function () {
+            this.message = this.message.split('').reverse().join('')
+        }
+    }
+
+});
+ </xmp>
+ </pre>
+ 
+ <!----------------------- app7 ------------------------------>
+ <p>7.过滤器以及管道符</p>
+ <p>Vue.js 允许你自定义过滤器，被用作一些常见的文本格式化。由"管道符 | "指示</p>
+ <p>过滤器函数接受表达式的值作为第一个参数，
+    以下实例对输入的字符串第一个字母转为大写</p>
+ <pre><xmp> <div id="app7">
+    {{ message | capitalize }}
+</div>
+<h1>缩写</h1>
+<p>
+    a v-bind:href = "url" <br>
+    a:href = "url"<br><br>
+    v-on:click <br>
+    @click
+</p>
+ new Vue({
+    el: '#app7',
+    data: {
+        message: 'abcd'
+    },
+    filters: {
+        capitalize: function (value) {
+            if (!value) return ''
+            value = value.toString()
+            return value.charAt(0).toUpperCase() + value.slice(1)
+        }
+    }
+})
+ </xmp>
+ </pre>
+ 
+    </div>
+
+
+    <div style="height: 167px;width: 250px;"></div>
+
+    <!-- web-button 底部 -->
+    <footer>
+        <h3 style="text-align: center;"> Copyright © 1661480468@qq.com
+            <br />滇ICP备19003958号-1
+
+        </h3>
+    </footer>
+</body>
+</html>

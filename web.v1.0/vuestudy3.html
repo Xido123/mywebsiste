@@ -1,0 +1,211 @@
+<!-- 
+  auther 1661480468@qq.com
+  网站公共样式
+
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>西多的基地</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        h1 {
+            font-size: 27px;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            border-radius: 2px;
+            left: 15%;
+            font-size: 35px;
+            text-transform: capitalize;
+            width: 500px;
+        }
+
+        h4 {
+            text-align: right;
+            margin-right: 50px;
+            color: rgba(0, 0, 0, 0.781);
+        }
+
+        h5 {
+            padding-left: 20px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            font-weight: 1.5;
+        }
+
+        p {
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        pre {
+            width: auto;
+            margin-left: 0;
+            background: #000000;
+            color: #fff;
+            font-family: consolas;
+            border-radius: 0;
+        }
+
+        xmp {
+            font-family: consolas;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- head 头部 -->
+    <div id="h">
+        <div class="logo2">
+            <span class="x-size">X</span>ido.home
+        </div>
+        <ul class="menu">
+            <li><a href="home.html">home</a></li>
+            <li><a href="note.html">note</a></li>
+            <li><a href="demo.html">demo</a></li>
+            <li><a href="weblog.html">weblog</a></li>
+        </ul>
+    </div>
+
+    <!-- code -->
+    <div class="mid-text">
+        <h1>vue循环语句</h1>
+        <h4>2019.11.26</h4>
+        <!------------------------- app one---------------------- -->
+        <h5>1.v-for指令</h5>
+        <p>循环使用v-for指令 <br>
+            v-for指令需要用到 site in sites 形式的特殊语法sites: 元数据组 site：数组元素迭代
+        </p>
+
+        <pre><xmp><div id="app">
+<ol>
+    <li v-for = "site in sites">
+        {{site.name}}
+    </li>
+</ol>
+</div>
+<script>
+new Vue({
+    el: 'app',
+    data: {
+        sites: [
+            { name: 'Vue'},
+            { name: 'React'},
+            { name: 'Ang'}
+        ]
+    }
+})
+</script>
+   </xmp>
+ </pre>
+        
+        <!------------------------- app two---------------------- -->
+        <h5>2.v-for在模板中使用</h5>
+
+        <pre><xmp><div id="app2">
+<ul>
+<template v-for="site in sites">
+    <li> {{site.name}} </li>
+    <li>-------------------</li>
+</template>
+</ul>
+</div>
+<script>
+new Vue({
+    el:'#app2',
+    data: {
+    sites: [
+      { name: 'Runoob' },
+      { name: 'Google' },
+      { name: 'Taobao' }
+    ]
+  }
+})
+</script>
+   </xmp>
+ </pre>
+        <!------------------------- app three---------------------- -->
+        <h5>2.v-for迭代对象</h5>
+        <p>V-FOR可以通过一个对象的属性来迭代对象数据</p>
+        <pre><xmp><div id = #app3>
+    <ul>
+        <li v-for= "value in object"></li>
+        {{value}}
+    </ul>
+<script>
+    new Vue({
+        el:'#app3',
+        data:{
+            object:{
+                name:'百度',
+                url:'https://baidu.com',
+                slogan:'百度一下你就知道'
+            }
+        }
+    })
+</script>
+ </div>
+</xmp>
+</pre>
+        <!------------------------- app four---------------------- -->
+        <h5>3.v-for迭代器提供多个参数为键名</h5>
+        <p></p>
+        <pre><xmp><div id="app4">
+<ul>
+    <li v-for="(key,value,index) in object">
+        {{value}}.{{key}}.{{index}}
+    </li>
+</ul>
+<script>
+new Vue({
+    el:'#app4',
+    data: {
+        object:{
+            name:'百度',
+            url:'baidu.com',
+            slog:'百度你好'
+        }
+    }
+})
+</script>
+</div>
+
+</xmp>
+</pre>
+        <!------------------------- app four---------------------- -->
+        <h5>3.v-for迭代整数</h5>
+        <p></p>
+        <pre><xmp><div id="app5">
+<ul>
+    <li v-for="n in 10">
+       {{n}}
+    </li>
+</ul>
+<script>
+new Vue({
+    el:'#app5'  
+})
+</script>
+</div>
+
+</xmp>
+</pre>
+        <!------------------ mid-text-end-div------------->
+    </div>
+
+
+    <div style="height: 167px;width: 250px;"></div>
+
+    <!-- web-button 底部 -->
+    <footer>
+        <h3 style="text-align: center;"> Copyright © 1661480468@qq.com
+            <br />滇ICP备19003958号-1
+
+        </h3>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>{{ message }}</p>
+    </div>
+    <div id="app2">
+        <p v-html="message"></p>
+    </div>
+    <div id="app3">
+        {{5+5}} <br>
+        {{ ok ? 'yse' : 'no'}} <br>
+        {{ message.split('').reverse().join('')}}
+        <!-- message.split(' ') == [ "N", "o", "t", " ", "s", "p", "l", "i", "t" ]
+split(' ')会把数据拆分为一个数组,括号里的' '是把数据拆分为每个字符串的意思，如果不用就不会拆分成每个字符串
+reverse( )是翻转的意思，把数据反过来
+message.reverse() == Not split //无效，因为只能对数组起作用
+所以要跟在split(' ')后使用
+join(' ')是重组的意思，把数组合成一个字符串
+message.split('').join(' ')
+slpit后会拆散会数组，join后就会变回原来的字符串了 -->
+        <div v-bind:id="'list-'+id">菜鸟教程</div>
+    </div>
+    <div id="app4">
+        <p v-if="seen">现在你看到我了</p>
+        <div v-if="ok">
+            <h1>菜鸟教程</h1>
+            <p>学的不仅是技术，更是梦想</p>
+            <p>hahaha </p>
+        </div>
+        <pre><a v-bind:href="url">菜鸟教程</a></pre>
+    </div>
+    <div id="app5">
+        <p>{{ message }}</p>
+        <input v-model="message">
+    </div>
+    <div id="app6">
+        <p>{{message}}</p>
+        <button v-on:click="reverseMessage">反转字符串</button>
+    </div>
+    <div id="app7">
+        {{ message | capitalize }}
+    </div>
+    <h1>缩写</h1>
+    <p>
+        a v-bind:href = "url" <br>
+        a:href = "url"<br><br>
+        v-on:click <br>
+        @click
+    </p>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'hello'
+            }
+        });
+        new Vue({
+            el: '#app2',
+            data: {
+                aaa: 'hello two'
+            }
+        });
+        new Vue({
+            el: '#app3',
+            data: {
+                ok: true,
+                message: 'abc',
+                id: 1
+            }
+        });
+        // v-if
+        new Vue({
+            el: '#app4',
+            data: {
+                seen: true,
+                ok: true,
+                url: 'https://www.baidu.com'
+
+            }
+        });
+        // 用户输入
+        new Vue({
+            el: '#app5',
+            data: {
+                message: 'aaaaa'
+            }
+        });
+        new Vue({
+            el: '#app6',
+            data: {
+                message: 'abcdef'
+            },
+            methods: {
+                reverseMessage: function () {
+                    this.message = this.message.split('').reverse().join('')
+                }
+            }
+
+        });
+        new Vue({
+            el: '#app7',
+            data: {
+                message: 'abcd'
+            },
+            filters: {
+                capitalize: function (value) {
+                    if (!value) return ''
+                    value = value.toString()
+                    return value.charAt(0).toUpperCase() + value.slice(1)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
